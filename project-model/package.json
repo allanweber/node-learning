@@ -1,0 +1,49 @@
+{
+  "name": "project-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
+    "lint": "eslint src --ext ts",
+    "test": "mocha --exit --require ts-node/register --colors src/**/*.test.ts",
+    "coverage": "nyc npm run test",
+    "coverage:file": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
+    "generate-mock": "'ts-node' src/mock/generate-mock",
+    "start-mock": "npm run generate-mock && json-server --watch src/data/db.json --port 3001",
+    "share": "lt -h 'http://serverless.social -p 3000 --subdomain allan",
+    "build": "npm run lint && npm run test && tsc",
+    "build:wp": "webpack --config webpack.config.js",
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "numeral": "^2.0.6",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/express": "^4.17.6",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.2",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "chai": "^4.2.0",
+    "chance": "^1.1.4",
+    "eslint": "^6.8.0",
+    "faker": "^4.1.0",
+    "json-schema-faker": "^0.5.0-rcv.24",
+    "json-server": "^0.16.1",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.3",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  }
+}
