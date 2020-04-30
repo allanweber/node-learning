@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "DEBUG=* nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
+    "dev": "DEBUG=app:* nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
     "lint": "eslint src --ext ts",
     "test": "mocha --exit --require ts-node/register --colors src/**/*.test.ts",
     "coverage": "nyc npm run test",
@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "jquery": "^3.5.0",
     "morgan": "^1.10.0",
+    "mssql": "^6.2.0",
     "numeral": "^2.0.6",
     "request": "^2.88.2"
   },
