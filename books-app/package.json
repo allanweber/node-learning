@@ -1,5 +1,5 @@
 {
-  "name": "project-sample",
+  "name": "books-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "generate-mock": "'ts-node' src/mock/generate-mock",
     "start-mock": "npm run generate-mock && json-server --watch src/data/db.json --port 3001",
     "share": "lt -h 'http://serverless.social -p 3000 --subdomain allan",
-    "build": "npm run lint && npm run test && tsc",
+    "build": "npm run lint && tsc",
     "build:wp": "webpack --config webpack.config.js",
     "start": "node dist/app.js"
   },
@@ -21,8 +21,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
+    "bootstrap": "^4.4.1",
+    "chalk": "^4.0.0",
     "express": "^4.17.1",
+    "jquery": "^3.5.0",
     "morgan": "^1.10.0",
     "numeral": "^2.0.6",
     "request": "^2.88.2"

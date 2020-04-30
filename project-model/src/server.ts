@@ -1,7 +1,9 @@
 import express from 'express'
+import morgan from 'morgan'
 import expressLoader from './express'
 
 const app = express()
+app.use(morgan('tiny'))
 
 expressLoader(app)
 
