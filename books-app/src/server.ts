@@ -3,12 +3,12 @@ import chalk from 'chalk'
 import morgan from 'morgan'
 import path from 'path'
 import sql from 'mssql'
-import passport from 'passport'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import bodyParser from 'body-parser'
 import booksRouter from './routes/book-routes'
 import authRouter from './routes/auth-routes'
+import passport from './config/passport'
 
 const app = express()
 const port = 3000
@@ -27,6 +27,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(session({ secret: 'library' }))
+passport(app)
 
 app.use('/books', booksRouter)
 app.use('/auth', authRouter)
